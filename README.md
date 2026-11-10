@@ -11,11 +11,13 @@ Estudo de como laços (*while*), decisões (*if/else*) e chamadas de função, i
 | Entregável | Onde está |
 |---|---|
 | Relatório técnico-acadêmico (ABNT) | `relatorio/Relatorio_Tema4_Fluxo_de_Controle.pdf` (e `.docx`) |
+| Apresentação | `apresentacao/` |
 | Prova de conceito (Assembly) | `poc/fatorial_completo_tema4.s` |
 | Roteiro da demonstração | Apêndice E do relatório |
 
 ## Conteúdo
 
+- `apresentacao/` – slides e material da apresentação oral.
 - `poc/fatorial_completo_tema4.s` – programa principal: laço *while* que lê n e mostra uma mensagem de erro enquanto ele for negativo, decisão *if/else* no caso base e fatorial recursivo com quadro de pilha de 8 bytes.
 - `poc/fatorial_iterativo.asm` – o mesmo fatorial com um laço, usado na comparação recursão × iteração.
 - `poc/erros_comuns.asm` – reprodução de falhas típicas: laço infinito, endereço de retorno perdido e pilha desalinhada (o cenário é escolhido pelo valor de `s11`).
