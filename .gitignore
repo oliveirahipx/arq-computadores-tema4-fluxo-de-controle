@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+relatorio/_bruto.docx
+~$*
+node_modules/
+ajustes_slides_adam.md

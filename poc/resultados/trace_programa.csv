@@ -1,0 +1,108 @@
+passo;pc;instrucao_basica;fonte;registradores_alterados;memoria
+1;0x00400000;addi a7, zero, 4;li a7, 4;a7=0x00000004;
+2;0x00400004;auipc a0, 0xfc10;la a0, msg_input;a0=0x10010004;
+3;0x00400008;addi a0, a0, -4;la a0, msg_input;a0=0x10010000;
+4;0x0040000c;ecall;ecall;;
+5;0x00400010;addi a7, zero, 5;li a7, 5;a7=0x00000005;
+6;0x00400014;ecall;ecall;a0=0xfffffffd;
+7;0x00400018;bge a0, zero, +28;bge a0, zero, fim_while;;
+8;0x0040001c;add s1, zero, a0;mv s1, a0;s1=0xfffffffd;
+9;0x00400020;addi a7, zero, 4;li a7, 4;a7=0x00000004;
+10;0x00400024;auipc a0, 0xfc10;la a0, msg_erro;a0=0x10010024;
+11;0x00400028;addi a0, a0, 9;la a0, msg_erro;a0=0x1001002d;
+12;0x0040002c;ecall;ecall;;
+13;0x00400030;jal zero, -48;j laco_while;;
+14;0x00400000;addi a7, zero, 4;li a7, 4;;
+15;0x00400004;auipc a0, 0xfc10;la a0, msg_input;a0=0x10010004;
+16;0x00400008;addi a0, a0, -4;la a0, msg_input;a0=0x10010000;
+17;0x0040000c;ecall;ecall;;
+18;0x00400010;addi a7, zero, 5;li a7, 5;a7=0x00000005;
+19;0x00400014;ecall;ecall;a0=0xffffffff;
+20;0x00400018;bge a0, zero, +28;bge a0, zero, fim_while;;
+21;0x0040001c;add s1, zero, a0;mv s1, a0;s1=0xffffffff;
+22;0x00400020;addi a7, zero, 4;li a7, 4;a7=0x00000004;
+23;0x00400024;auipc a0, 0xfc10;la a0, msg_erro;a0=0x10010024;
+24;0x00400028;addi a0, a0, 9;la a0, msg_erro;a0=0x1001002d;
+25;0x0040002c;ecall;ecall;;
+26;0x00400030;jal zero, -48;j laco_while;;
+27;0x00400000;addi a7, zero, 4;li a7, 4;;
+28;0x00400004;auipc a0, 0xfc10;la a0, msg_input;a0=0x10010004;
+29;0x00400008;addi a0, a0, -4;la a0, msg_input;a0=0x10010000;
+30;0x0040000c;ecall;ecall;;
+31;0x00400010;addi a7, zero, 5;li a7, 5;a7=0x00000005;
+32;0x00400014;ecall;ecall;a0=0x00000005;
+33;0x00400018;bge a0, zero, +28;bge a0, zero, fim_while;;
+34;0x00400034;add s0, zero, a0;mv s0, a0;s0=0x00000005;
+35;0x00400038;add a0, zero, s0;mv a0, s0;;
+36;0x0040003c;jal ra, +44;jal ra, fatorial;ra=0x00400040;
+37;0x00400068;addi sp, sp, -8;addi sp, sp, -8;sp=0x7fffeff4;
+38;0x0040006c;sw ra, 4(sp);sw ra, 4(sp);;W 0x7fffeff8 = 4194368
+39;0x00400070;sw a0, 0(sp);sw a0, 0(sp);;W 0x7fffeff4 = 5
+40;0x00400074;addi t1, zero, 1;li t1, 1;t1=0x00000001;
+41;0x00400078;bge t1, a0, +24;ble a0, t1, if_caso_base;;
+42;0x0040007c;addi a0, a0, -1;addi a0, a0, -1;a0=0x00000004;
+43;0x00400080;jal ra, -24;jal ra, fatorial;ra=0x00400084;
+44;0x00400068;addi sp, sp, -8;addi sp, sp, -8;sp=0x7fffefec;
+45;0x0040006c;sw ra, 4(sp);sw ra, 4(sp);;W 0x7fffeff0 = 4194436
+46;0x00400070;sw a0, 0(sp);sw a0, 0(sp);;W 0x7fffefec = 4
+47;0x00400074;addi t1, zero, 1;li t1, 1;;
+48;0x00400078;bge t1, a0, +24;ble a0, t1, if_caso_base;;
+49;0x0040007c;addi a0, a0, -1;addi a0, a0, -1;a0=0x00000003;
+50;0x00400080;jal ra, -24;jal ra, fatorial;;
+51;0x00400068;addi sp, sp, -8;addi sp, sp, -8;sp=0x7fffefe4;
+52;0x0040006c;sw ra, 4(sp);sw ra, 4(sp);;W 0x7fffefe8 = 4194436
+53;0x00400070;sw a0, 0(sp);sw a0, 0(sp);;W 0x7fffefe4 = 3
+54;0x00400074;addi t1, zero, 1;li t1, 1;;
+55;0x00400078;bge t1, a0, +24;ble a0, t1, if_caso_base;;
+56;0x0040007c;addi a0, a0, -1;addi a0, a0, -1;a0=0x00000002;
+57;0x00400080;jal ra, -24;jal ra, fatorial;;
+58;0x00400068;addi sp, sp, -8;addi sp, sp, -8;sp=0x7fffefdc;
+59;0x0040006c;sw ra, 4(sp);sw ra, 4(sp);;W 0x7fffefe0 = 4194436
+60;0x00400070;sw a0, 0(sp);sw a0, 0(sp);;W 0x7fffefdc = 2
+61;0x00400074;addi t1, zero, 1;li t1, 1;;
+62;0x00400078;bge t1, a0, +24;ble a0, t1, if_caso_base;;
+63;0x0040007c;addi a0, a0, -1;addi a0, a0, -1;a0=0x00000001;
+64;0x00400080;jal ra, -24;jal ra, fatorial;;
+65;0x00400068;addi sp, sp, -8;addi sp, sp, -8;sp=0x7fffefd4;
+66;0x0040006c;sw ra, 4(sp);sw ra, 4(sp);;W 0x7fffefd8 = 4194436
+67;0x00400070;sw a0, 0(sp);sw a0, 0(sp);;W 0x7fffefd4 = 1
+68;0x00400074;addi t1, zero, 1;li t1, 1;;
+69;0x00400078;bge t1, a0, +24;ble a0, t1, if_caso_base;;
+70;0x00400090;addi a0, zero, 1;li a0, 1;;
+71;0x00400094;lw ra, 4(sp);lw ra, 4(sp);;R 0x7fffefd8 = 4194436
+72;0x00400098;addi sp, sp, 8;addi sp, sp, 8;sp=0x7fffefdc;
+73;0x0040009c;jalr zero, 0(ra);jr ra;;
+74;0x00400084;lw t1, 0(sp);lw t1, 0(sp);t1=0x00000002;R 0x7fffefdc = 2
+75;0x00400088;mul a0, t1, a0;mul a0, t1, a0;a0=0x00000002;
+76;0x0040008c;jal zero, +8;j epilogo;;
+77;0x00400094;lw ra, 4(sp);lw ra, 4(sp);;R 0x7fffefe0 = 4194436
+78;0x00400098;addi sp, sp, 8;addi sp, sp, 8;sp=0x7fffefe4;
+79;0x0040009c;jalr zero, 0(ra);jr ra;;
+80;0x00400084;lw t1, 0(sp);lw t1, 0(sp);t1=0x00000003;R 0x7fffefe4 = 3
+81;0x00400088;mul a0, t1, a0;mul a0, t1, a0;a0=0x00000006;
+82;0x0040008c;jal zero, +8;j epilogo;;
+83;0x00400094;lw ra, 4(sp);lw ra, 4(sp);;R 0x7fffefe8 = 4194436
+84;0x00400098;addi sp, sp, 8;addi sp, sp, 8;sp=0x7fffefec;
+85;0x0040009c;jalr zero, 0(ra);jr ra;;
+86;0x00400084;lw t1, 0(sp);lw t1, 0(sp);t1=0x00000004;R 0x7fffefec = 4
+87;0x00400088;mul a0, t1, a0;mul a0, t1, a0;a0=0x00000018;
+88;0x0040008c;jal zero, +8;j epilogo;;
+89;0x00400094;lw ra, 4(sp);lw ra, 4(sp);;R 0x7fffeff0 = 4194436
+90;0x00400098;addi sp, sp, 8;addi sp, sp, 8;sp=0x7fffeff4;
+91;0x0040009c;jalr zero, 0(ra);jr ra;;
+92;0x00400084;lw t1, 0(sp);lw t1, 0(sp);t1=0x00000005;R 0x7fffeff4 = 5
+93;0x00400088;mul a0, t1, a0;mul a0, t1, a0;a0=0x00000078;
+94;0x0040008c;jal zero, +8;j epilogo;;
+95;0x00400094;lw ra, 4(sp);lw ra, 4(sp);ra=0x00400040;R 0x7fffeff8 = 4194368
+96;0x00400098;addi sp, sp, 8;addi sp, sp, 8;sp=0x7fffeffc;
+97;0x0040009c;jalr zero, 0(ra);jr ra;;
+98;0x00400040;add t0, zero, a0;mv t0, a0;t0=0x00000078;
+99;0x00400044;addi a7, zero, 4;li a7, 4;a7=0x00000004;
+100;0x00400048;auipc a0, 0xfc10;la a0, msg_output;a0=0x10010048;
+101;0x0040004c;addi a0, a0, 12;la a0, msg_output;a0=0x10010054;
+102;0x00400050;ecall;ecall;;
+103;0x00400054;add a0, zero, t0;mv a0, t0;a0=0x00000078;
+104;0x00400058;addi a7, zero, 1;li a7, 1;a7=0x00000001;
+105;0x0040005c;ecall;ecall;;
+106;0x00400060;addi a7, zero, 10;li a7, 10;a7=0x0000000a;
+107;0x00400064;ecall;ecall;;
